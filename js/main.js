@@ -23,7 +23,7 @@ window.onload = function() {
         platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 32, 'ground');
-        ground.scale.setTo(20, 1);
+        ground.scale.setTo(60, 1);
         ground.body.immovable = true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
