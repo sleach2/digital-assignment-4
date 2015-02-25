@@ -16,14 +16,14 @@ window.onload = function() {
     var platforms;
     
     function create() {
-        game.world.setBounds(0,0,1000,600);
+        game.world.setBounds(0,0,20000,600);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        bkg=game.add.tileSprite(0,0,1000,600,'bricks'); 
+        bkg=game.add.tileSprite(0,0,20000,600,'bricks'); 
         bkg.fixedToCamera=true;
         platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 32, 'ground');
-        ground.scale.setTo(2, 1);
+        ground.scale.setTo(20, 1);
         ground.body.immovable = true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
