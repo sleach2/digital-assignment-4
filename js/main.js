@@ -21,7 +21,7 @@ window.onload = function() {
         bkg.fixedToCamera=true;
         platforms = game.add.group();
         platforms.enableBody = true;
-        var ground = platforms.create(0, game.world.height - 64, 'ground');
+        var ground = platforms.create(0, game.world.height - 32, 'ground');
         ground.scale.setTo(2, 1);
         ground.body.immovable = true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
