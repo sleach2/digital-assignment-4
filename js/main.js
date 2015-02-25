@@ -13,16 +13,17 @@ window.onload = function() {
     var bkg;
     var player;
     var cursors;
-    var ground;
+    var platforms;
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         bkg=game.add.tileSprite(0,0,1000,600,'bricks'); 
         bkg.fixedToCamera=true;
-        ground = game.add.sprite(0, game.world.height - 64, 'ground');
-        ground.enableBody=true;
+        platforms = game.add.group();
+        platforms.enableBody = true;
+        var ground = platforms.create(0, game.world.height - 64, 'ground');
         ground.scale.setTo(2, 2);
-        //ground.body.immovable = true;
+        ground.body.immovable = true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
