@@ -19,7 +19,7 @@ window.onload = function() {
         game.world.setBounds(0,0,20000,600);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         bkg=game.add.tileSprite(0,0,20000,600,'bricks'); 
-        bkg.fixedToCamera=true;
+        //bkg.fixedToCamera=true;
         platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 32, 'ground');
