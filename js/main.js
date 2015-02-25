@@ -5,6 +5,7 @@ window.onload = function() {
     
     function preload() {
         game.load.image( 'sky', 'assets/sky.png' );
+        game.load.image('bricks','assets/bricks.png');
         game.load.spritesheet('dude', 'assets/dude.png',32,48);
     }
     
@@ -14,7 +15,7 @@ window.onload = function() {
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        bkg=game.add.tileSprite(0,0,1000,600,'sky'); 
+        bkg=game.add.tileSprite(0,0,1000,600,'bricks'); 
         bkg.fixedToCamera=true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
@@ -28,6 +29,7 @@ window.onload = function() {
     }
 
     function update() {
+        player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
             player.animations.play('left');
