@@ -19,10 +19,10 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         bkg=game.add.tileSprite(0,0,1000,600,'bricks'); 
         bkg.fixedToCamera=true;
-        var ground = game.add.sprite(0, game.world.height - 64, 'ground');
+        ground = game.add.sprite(0, game.world.height - 64, 'ground');
         ground.enableBody=true;
         ground.scale.setTo(2, 2);
-        ground.body.immovable = true;
+        //ground.body.immovable = true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
@@ -35,6 +35,7 @@ window.onload = function() {
     }
 
     function update() {
+        game.physics.arcade.collide(player, ground);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
