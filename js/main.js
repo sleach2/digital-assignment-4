@@ -40,8 +40,10 @@ window.onload = function() {
             player.animations.stop();
             player.frame = 4;
         }
-        if (cursors.up.isDown && player.body.touching.down){
+        if (cursors.up.isDown){
             player.body.velocity.y = -350;
+        }else{
+            player.body.velocity.y=350;
         }
     }
 };
