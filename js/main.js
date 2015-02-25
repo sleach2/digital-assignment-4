@@ -7,16 +7,22 @@ window.onload = function() {
         game.load.image( 'sky', 'assets/sky.png' );
         game.load.image('bricks','assets/bricks.png');
         game.load.spritesheet('dude', 'assets/dude.png',32,48);
+        game.load.image('ground','assets/platform.png');
     }
     
     var bkg;
     var player;
     var cursors;
+    var ground;
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         bkg=game.add.tileSprite(0,0,1000,600,'bricks'); 
         bkg.fixedToCamera=true;
+        var ground = game.add.sprite(0, game.world.height - 64, 'ground');
+        ground.enableBody=true;
+        ground.scale.setTo(2, 2);
+        ground.body.immovable = true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
