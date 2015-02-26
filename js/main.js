@@ -30,14 +30,12 @@ window.onload = function() {
         game.world.setBounds(0,0,4000,600);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         bkg=game.add.tileSprite(0,0,4000,600,'city'); 
-        //bkg.fixedToCamera=true;
         platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 32, 'ground');
         ground.scale.setTo(60, 1);
         ground.body.immovable = true;
         game.add.sprite(0,game.world.height-155,'hospital');
-        //game.add.sprite(0,0,'man');
         player = game.add.sprite(200, game.world.height - 90, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
@@ -57,7 +55,6 @@ window.onload = function() {
             man.frame=3;
             man.body.collideWorldBounds=true;
         }
-        //spawn();
         var heart=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'heart');
         var brain=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'brain');
         var lungs=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'lungs');
@@ -67,28 +64,17 @@ window.onload = function() {
         timer.start();
     }
 
-    /*function spawn(){
-        for(var i=0; i<20; i++){
-            var man = enemies.create(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'man');
-            man.body.gravity.y=350;
-            man.animations.add('l',[0,1,2],10,true);
-            man.animations.add('r',[4,5,6],10,true);
-            man.frame=3;
-            man.body.collideWorldBounds=true;
-        }
-    }*/
-
     function moveL(){
         enemies.forEach(function(man){
             man.animations.play('l');
-            man.body.velocity.x=-250;
+            man.body.velocity.x=-150;
         },this);
     }
 
     function moveR(){
         enemies.forEach(function(man){
             man.animations.play('r');
-            man.body.velocity.x=250;
+            man.body.velocity.x=150;
         },this);
     }
     
