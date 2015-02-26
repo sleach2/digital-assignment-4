@@ -27,6 +27,7 @@ window.onload = function() {
         var ground = platforms.create(0, game.world.height - 32, 'ground');
         ground.scale.setTo(60, 1);
         ground.body.immovable = true;
+        game.add.sprite(0,game.world.height-150,'hospital');
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
@@ -36,7 +37,7 @@ window.onload = function() {
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
-        game.add.sprite(0,game.world.height-100,'hospital');
+
     }
 
     function update() {
