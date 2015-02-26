@@ -60,6 +60,10 @@ window.onload = function() {
         var heart=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'heart');
         var brain=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'brain');
         var lungs=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'lungs');
+        timer = game.time.create(false);
+        timer.loop(2000,moveL, this);
+        timer.loop(4000,moveR,this);
+        timer.start();
     }
 
     /*function spawn(){
@@ -74,27 +78,22 @@ window.onload = function() {
     }*/
 
     function moveL(){
-        man.animations.play('l');
-        for(var j=0; j<10; j++){
+        enemies.forEach(function(man){
+            man.animations.play('l');
             man.body.velocity.x=-250;
-        }
-        moveR();
+        },this);
     }
 
     function moveR(){
-        man.animations.play('r');
-        for(var h=0; h<10; h++){
+        enemies.forEach(function(man){
+            man.animations.play('r');
             man.body.velocity.x=250;
-        }
-        moveL();
+        },this);
     }
     
     function update() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(enemies,platforms);
-        enemies.forEach(function(man){
-            moveL();
-        },this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
