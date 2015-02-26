@@ -13,13 +13,14 @@ window.onload = function() {
         game.load.image('brain', 'assets/brain.png');
         game.load.image('heart', 'assets/heart.png');
         game.load.image('lungs', 'assets/lungs.png');
-        game.load.spritesheet('man','assets/man.png',20,20);
+        game.load.spritesheet('man','assets/player.png');
     }
     
     var bkg;
     var player;
     var cursors;
     var platforms;
+    var enemies;
     
     function create() {
         game.world.setBounds(0,0,4000,600);
@@ -33,7 +34,7 @@ window.onload = function() {
         ground.body.immovable = true;
         game.add.sprite(0,game.world.height-155,'hospital');
         game.add.sprite(0,0,'man');
-        player = game.add.sprite(150, game.world.height - 90, 'dude');
+        player = game.add.sprite(160, game.world.height - 90, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 300;
@@ -42,6 +43,8 @@ window.onload = function() {
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
+        enemies=game.add.group();
+        enemies.enableBody=true;
 
     }
 
