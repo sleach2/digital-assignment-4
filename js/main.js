@@ -13,7 +13,7 @@ window.onload = function() {
         game.load.image('brain', 'assets/brain.png');
         game.load.image('heart', 'assets/heart.png');
         game.load.image('lungs', 'assets/lungs.png');
-        game.load.spritesheet('man','assets/man.png',25,22);
+        game.load.spritesheet('man','assets/man.png',25,23);
     }
     
     var bkg;
@@ -54,7 +54,7 @@ window.onload = function() {
             man.body.gravity.y=350;
             man.animations.add('l',[0,1,2],10,true);
             man.animations.add('r',[4,5,6],10,true);
-            man.frame=0;
+            man.frame=3;
         }
     }
 
