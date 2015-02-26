@@ -10,6 +10,9 @@ window.onload = function() {
         game.load.image('ground','assets/platform.png');
         game.load.image('city', 'assets/city.png');
         game.load.image('hospital', 'assets/hospital.png');
+        game.load.image('brain', 'assets/brain.png');
+        game.load.image('heart', 'assets/heart.png');
+        game.load.image('lungs', 'assets/lungs.png');
     }
     
     var bkg;
