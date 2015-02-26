@@ -34,7 +34,7 @@ window.onload = function() {
         ground.body.immovable = true;
         game.add.sprite(0,game.world.height-155,'hospital');
         //game.add.sprite(0,0,'man');
-        player = game.add.sprite(160, game.world.height - 90, 'dude');
+        player = game.add.sprite(200, game.world.height - 90, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 300;
