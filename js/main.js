@@ -45,7 +45,14 @@ window.onload = function() {
         game.camera.follow(player);
         enemies=game.add.group();
         enemies.enableBody=true;
+        spawn();
+    }
 
+    function spawn(){
+        for(var i=0; i<20; i++){
+            var man = enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'man');
+            man.body.gravity.y=350;
+        }
     }
 
     function update() {
