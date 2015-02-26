@@ -9,6 +9,7 @@ window.onload = function() {
         game.load.spritesheet('dude', 'assets/dude.png',32,48);
         game.load.image('ground','assets/platform.png');
         game.load.image('city', 'assets/city.png');
+        game.load.image('hospital', 'assets/hospital.png');
     }
     
     var bkg;
@@ -35,6 +36,7 @@ window.onload = function() {
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
+        game.add.sprite(0,0,'hospital');
     }
 
     function update() {
