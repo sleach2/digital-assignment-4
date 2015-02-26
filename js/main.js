@@ -36,7 +36,7 @@ window.onload = function() {
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
-        game.add.sprite(0,0,'hospital');
+        game.add.sprite(0,game.world.height-32,'hospital');
     }
 
     function update() {
