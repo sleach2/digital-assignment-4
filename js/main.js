@@ -13,6 +13,7 @@ window.onload = function() {
         game.load.image('brain', 'assets/brain.png');
         game.load.image('heart', 'assets/heart.png');
         game.load.image('lungs', 'assets/lungs.png');
+        game.load.soritesheet('man','assets/man.png',32,48);
     }
     
     var bkg;
@@ -31,6 +32,7 @@ window.onload = function() {
         ground.scale.setTo(60, 1);
         ground.body.immovable = true;
         game.add.sprite(0,game.world.height-155,'hospital');
+        game.add.sprite(0,0,'man');
         player = game.add.sprite(32, game.world.height - 90, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
