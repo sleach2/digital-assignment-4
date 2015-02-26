@@ -61,6 +61,7 @@ window.onload = function() {
     function update() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(enemies,platforms);
+        enemies.forEach(function(man){man.animations.play('l')},this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
