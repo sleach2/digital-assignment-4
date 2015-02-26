@@ -55,9 +55,14 @@ window.onload = function() {
             man.frame=3;
             man.body.collideWorldBounds=true;
         }
+        organs=game.add.group();
+        organs.enableBody=true;
         var heart=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'heart');
+        heart.body.gravity.y=350;
         var brain=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'brain');
+        brain.body.gravity.y=350;
         var lungs=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'lungs');
+        lungs.body.gravity.y=350;
         timer = game.time.create(false);
         timer.loop(2000,moveL, this);
         timer.loop(4000,moveR,this);
