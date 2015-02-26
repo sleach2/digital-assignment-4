@@ -54,7 +54,7 @@ window.onload = function() {
             man.body.gravity.y=350;
             man.animations.add('l',[0,1,2],10,true);
             man.animations.add('r',[4,5,6],10,true);
-            man.frame=3;
+            man.frame=0;
         }
     }
 
