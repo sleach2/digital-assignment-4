@@ -21,6 +21,9 @@ window.onload = function() {
     var cursors;
     var platforms;
     var enemies;
+    var hbol=false;
+    var bbol=false;
+    var lbol=false;
     
     function create() {
         game.world.setBounds(0,0,4000,600);
@@ -45,10 +48,6 @@ window.onload = function() {
         game.camera.follow(player);
         enemies=game.add.group();
         enemies.enableBody=true;
-        spawn();
-    }
-
-    function spawn(){
         for(var i=0; i<20; i++){
             var man = enemies.create(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'man');
             man.body.gravity.y=350;
@@ -57,7 +56,22 @@ window.onload = function() {
             man.frame=3;
             man.body.collideWorldBounds=true;
         }
+        //spawn();
+        var heart=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'heart');
+        var brain=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'brain');
+        var lungs=game.add.sprite(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'lungs');
     }
+
+    /*function spawn(){
+        for(var i=0; i<20; i++){
+            var man = enemies.create(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'man');
+            man.body.gravity.y=350;
+            man.animations.add('l',[0,1,2],10,true);
+            man.animations.add('r',[4,5,6],10,true);
+            man.frame=3;
+            man.body.collideWorldBounds=true;
+        }
+    }*/
 
     function moveL(){
         man.animations.play('l');
