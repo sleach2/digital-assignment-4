@@ -52,6 +52,9 @@ window.onload = function() {
         for(var i=0; i<20; i++){
             var man = enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'man');
             man.body.gravity.y=350;
+            man.animations.add('l',[0,1,2],10,true);
+            man.animations.add('r',[4,5,6],10,true);
+            man.frame=3;
         }
     }
 
