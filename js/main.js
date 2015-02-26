@@ -63,14 +63,17 @@ window.onload = function() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(enemies,platforms);
         enemies.forEach(function(man){
-            man.animations.play('l');
-            for(var j=0; j<10; j++){
-                man.body.velocity.x=-250;
+            if(man.body.touching.down){
+                man.animations.play('l');
+                for(var j=0; j<10; j++){
+                    man.body.velocity.x=-250;
+                }
+                man.animations.play('r');
+                for(var h=0; h<10; h++){
+                    man.body.velocity.x=250;
+                }
             }
-            man.animations.play('r');
-            for(var h=0; h<10; h++){
-                man.body.velocity.x=250;
-            }},this);
+        },this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
