@@ -33,7 +33,7 @@ window.onload = function() {
         ground.scale.setTo(60, 1);
         ground.body.immovable = true;
         game.add.sprite(0,game.world.height-155,'hospital');
-        game.add.sprite(0,0,'man');
+        //game.add.sprite(0,0,'man');
         player = game.add.sprite(160, game.world.height - 90, 'dude');
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.2;
@@ -57,6 +57,7 @@ window.onload = function() {
 
     function update() {
         game.physics.arcade.collide(player, platforms);
+        game.physics.arcade.collide(enemies,platforms);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
