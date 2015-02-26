@@ -8,6 +8,7 @@ window.onload = function() {
         game.load.image('bricks','assets/bricks.png');
         game.load.spritesheet('dude', 'assets/dude.png',32,48);
         game.load.image('ground','assets/platform.png');
+        game.load.image('city', 'assets/city.png');
     }
     
     var bkg;
@@ -18,7 +19,7 @@ window.onload = function() {
     function create() {
         game.world.setBounds(0,0,4000,600);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        bkg=game.add.tileSprite(0,0,4000,600,'bricks'); 
+        bkg=game.add.tileSprite(0,0,4000,600,'city'); 
         //bkg.fixedToCamera=true;
         platforms = game.add.group();
         platforms.enableBody = true;
