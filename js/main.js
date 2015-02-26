@@ -24,6 +24,7 @@ window.onload = function() {
     var hbol=false;
     var bbol=false;
     var lbol=false;
+    var timer;
     
     function create() {
         game.world.setBounds(0,0,4000,600);
