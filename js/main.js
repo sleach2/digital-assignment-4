@@ -55,6 +55,7 @@ window.onload = function() {
             man.animations.add('l',[0,1,2],10,true);
             man.animations.add('r',[4,5,6],10,true);
             man.frame=3;
+            man.body.collideWorldBounds=true;
         }
     }
 
@@ -62,13 +63,15 @@ window.onload = function() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(enemies,platforms);
         enemies.forEach(function(man){
+            while(true){
             man.animations.play('l');
             for(var j=0; j<10; j++){
                 man.body.velocity.x=-250;
             }
+            man.animations.play('r');
             for(var h=0; h<10; h++){
                 man.body.velocity.x=250;
-            }},this);
+            }}},this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
