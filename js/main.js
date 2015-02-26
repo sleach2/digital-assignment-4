@@ -13,7 +13,7 @@ window.onload = function() {
         game.load.image('brain', 'assets/brain.png');
         game.load.image('heart', 'assets/heart.png');
         game.load.image('lungs', 'assets/lungs.png');
-        game.load.spritesheet('man','assets/player.png');
+        game.load.spritesheet('man','assets/man.png',200,20);
     }
     
     var bkg;
