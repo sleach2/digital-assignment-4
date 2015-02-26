@@ -79,9 +79,7 @@ window.onload = function() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(enemies,platforms);
         enemies.forEach(function(man){
-            if(man.body.touching.down){
-                moveL();
-            }
+            moveL();
         },this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
