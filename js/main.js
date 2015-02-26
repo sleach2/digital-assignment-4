@@ -59,19 +59,28 @@ window.onload = function() {
         }
     }
 
+    function moveL(){
+        man.animations.play('l');
+        for(var j=0; j<10; j++){
+            man.body.velocity.x=-250;
+        }
+        moveR();
+    }
+
+    function moveR(){
+        man.animations.play('r');
+        for(var h=0; h<10; h++){
+            man.body.velocity.x=250;
+        }
+        moveL();
+    }
+    
     function update() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(enemies,platforms);
         enemies.forEach(function(man){
             if(man.body.touching.down){
-                man.animations.play('l');
-                for(var j=0; j<10; j++){
-                    man.body.velocity.x=-250;
-                }
-                man.animations.play('r');
-                for(var h=0; h<10; h++){
-                    man.body.velocity.x=250;
-                }
+                moveL();
             }
         },this);
         player.body.velocity.x=0;
